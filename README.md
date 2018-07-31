@@ -8,11 +8,11 @@ FiveThirtyEight obtained the data from Clemson University researchers [Darren Li
 
 The basis for the Twitter handles included in this data are the [November 2017](https://democrats-intelligence.house.gov/uploadedfiles/exhibit_b.pdf) and [June 2018](https://democrats-intelligence.house.gov/uploadedfiles/ira_handles_june_2018.pdf) lists of Internet Research Agency-connected handles that Twitter [provided](https://democrats-intelligence.house.gov/news/documentsingle.aspx?DocumentID=396) to Congress. This data set contains every tweet sent from each of the 2,752 handles on the November 2017 list since May 10, 2015. For the 946 handles newly added on the June 2018 list, this data contains every tweet since June 19, 2015. (For certain handles, the data extends even earlier than these ranges. Some of the listed handles did not tweet during these ranges.) The researchers believe that this includes the overwhelming majority of these handles’ activity. The researchers also removed 19 handles that remained on the June 2018 list but that they deemed very unlikely to be IRA trolls.
 
-In total, the file `IRAhandle_tweets.csv` includes 2,973,371 tweets from 2,848 Twitter handles. It is nearly 800 MB; it may not load fully in Excel. Also, as always, caveat emptor -- in this case, tweet-reader beware: In addition to their own content, some of the tweets contain active links, which may lead to adult content or worse.
+In total, the nine CSV files include 2,973,371 tweets from 2,848 Twitter handles. Also, as always, caveat emptor -- in this case, tweet-reader beware: In addition to their own content, some of the tweets contain active links, which may lead to adult content or worse.
 
 The Clemson researchers used this data in a working paper, [Troll Factories: The Internet Research Agency and State-Sponsored Agenda Building](http://pwarren.people.clemson.edu/Linvill_Warren_TrollFactory.pdf), which is currently under review at an academic journal. The authors’ analysis in this paper was done on the data file provided here, limiting the date window to June 19, 2015, to Dec. 31, 2017.
 
-The file `IRAhandle_tweets.csv` has the following columns:
+The files have the following columns:
 
 Header | Definition
 ---|---------
