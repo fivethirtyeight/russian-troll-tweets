@@ -8,7 +8,7 @@ The basis for the Twitter handles included in this data are the [November 2017](
 
 In total, the file `IRAhandle_tweets.csv` includes 2,973,371 tweets from 2,848 Twitter handles. It is nearly 800 MB; it may not load fully in Excel. Also, as always, caveat emptor -- in this case, tweet-reader beware: In addition to their own content, some of the tweets contain active links, which may lead to adult content or worse.
 
-This data was used in the FiveThirtyEight story [Why We’re Sharing 3 Million Russian Troll Tweets](http://fivethirtyeight.com/LINKTK).
+This data was used in the FiveThirtyEight story [Why We’re Sharing 3 Million Russian Troll Tweets](https://fivethirtyeight.com/features/why-were-sharing-3-million-russian-troll-tweets).
 
 The Clemson researchers used this data in a working paper, [Troll Factories: The Internet Research Agency and State-Sponsored Agenda Building](http://pwarren.people.clemson.edu/Linvill_Warren_TrollFactory.pdf), which is currently under review at an academic journal. The authors’ analysis in this paper was done on the data file provided here, limiting the date window to June 19, 2015, to Dec. 31, 2017.
 
