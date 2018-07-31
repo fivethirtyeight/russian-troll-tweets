@@ -23,8 +23,8 @@ Header | Definition
 `language` | The language of the tweet
 `publish_date` | The date and time the tweet was sent
 `harvested_date` | The date and time the tweet was collected by Social Studio
-`following` | The number of followers the handle had at the time of the tweet
-`followers` | The number of accounts the handle was following at the time of the tweet
+`following` | The number of accounts the handle was following at the time of the tweet
+`followers` | The number of followers the handle had at the time of the tweet
 `updates` | The number of “update actions” on the account that authored the tweet, including tweets, retweets and likes
 `post_type` | Indicates if the tweet was a retweet or a quote-tweet
 `account_type` | Specific account theme, as coded by Linvill and Warren
