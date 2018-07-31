@@ -38,5 +38,5 @@ The Clemson researchers wish to acknowledge the assistance of the Clemson Univer
 
 #### Updates
 
-- split data into several small files [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/2)]
-- fix double encoding [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/5)]
+- Split data into several small files. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/2)]
+- Fix double encoding. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/5)]
