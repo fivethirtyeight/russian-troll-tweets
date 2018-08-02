@@ -10,8 +10,10 @@ import time
 #
 # fields are the same, noting
 #   'content' is unicode;
+#   'publish_date' and 'harvested_date' are reformatted to yyyy/mm/dd hh:mm
+#    so that string compares will work.
 #   'publish_time' is added; this is publish_date converted to seconds.
-#     I'm assuming the times in the csv are all UTC.  
+#     I'm assuming the times in the csv are all UTC (pending issue #9)
 #   'external_author_id' field is a mix of large integers, and large
 #    floats like 8.90000000000e+17
 #     Have left it as text.
@@ -28,15 +30,18 @@ re_date = re.compile(r"\s*(\d+)/(\d+)/(\d+)\s+(\d+):(\d+)\s*")
 
 base_time = time.mktime( (1970,1,2, 0,0,0, 0,0,0)) - 24*3600
 
-# convert m/d/yyyy hh:mm to  time-since-1970-UTC
-def convert_date( dstrng, tz= 0):
+# convert m/d/yyyy hh:mm to yyyy/mm/dd hh:mm and optionally to  time-since-1970-UTC
+def convert_date( dstrng, tz= 0, only_reformat=False):
     m = re_date.match( dstrng )
     if m is None:
         raise ValueError("bad time string %s" %dstrng)
     mm,dd,yy,thh,tmm = [ int(x,10) for x in m.groups()]
+    newstring = "%d/%02d/%02d %02d:%02d" %( yy,mm,dd,thh,tmm)
+    if only_reformat:
+        return newstring
 		
     toff = time.mktime( (yy,mm,dd, thh, tmm, 0, 0, 0, 0) ) -base_time + 3600*tz
-    return int(round(toff)) 
+    return newstring,int(round(toff))
 #
 # read the CSV file, make sqlite database
 #
@@ -86,7 +91,8 @@ def copy_to_db( infilenames, outfilename):
         with open(fn) as csvfile:
             reader = csv.DictReader( csvfile)
             for rec in reader:
-                rec['publish_time'] = convert_date( rec['publish_date'])
+                rec['publish_date'],rec['publish_time'] = convert_date( rec['publish_date'])
+                rec['harvested_date'] = convert_date( rec['harvested_date'],only_reformat=True)
                 rec['content'] = codecs.decode( rec['content'],'utf_8')
                 c.execute( cmd, [ rec[x] for x in fields] )
                 n += 1
