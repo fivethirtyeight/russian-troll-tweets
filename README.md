@@ -40,3 +40,6 @@ The Clemson researchers wish to acknowledge the assistance of the Clemson Univer
 
 - Split data into several small files. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/2)]
 - Fix double encoding. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/5)]
+
+
+licensed under the MIT license.
