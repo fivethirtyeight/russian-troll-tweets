@@ -1,3 +1,6 @@
+-- Updates against b4ta file
+-- https://github.com/fivethirtyeight/russian-troll-tweets/issues/4#issuecomment-412160915
+
 CREATE TABLE rustweets.beta_patch (
 	author                    text,
 	external_author_id        text,
