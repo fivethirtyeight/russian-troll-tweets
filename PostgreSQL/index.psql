@@ -1,0 +1,2 @@
+CREATE INDEX ON rustweets (publish_date);
+CREATE INDEX ON rustweets.tweets (publish_date);
