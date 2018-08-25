@@ -31,8 +31,6 @@ Header | Definition
 `retweet` | A binary indicator of whether or not the tweet is a retweet
 `account_category` | General account theme, as coded by Linvill and Warren
 `new_june_2018` | A binary indicator of whether the handle was newly listed in June 2018
-
-(New in Version 2)
 `alt_external_author_id` | Reconstruction of author account ID from Twitter, derived from `article_url` varibale and the first list provided to Congress
 `external_author_id` | An author account ID from Twitter (Includes numerous rounding errrors)
 `tweet_id`| Unique id assigned by twitter to each status update, derived from `article_url`
