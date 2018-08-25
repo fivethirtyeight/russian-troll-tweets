@@ -31,13 +31,12 @@ Header | Definition
 `retweet` | A binary indicator of whether or not the tweet is a retweet
 `account_category` | General account theme, as coded by Linvill and Warren
 `new_june_2018` | A binary indicator of whether the handle was newly listed in June 2018
-`alt_external_author_id` | Reconstruction of author account ID from Twitter, derived from `article_url` varibale and the first list provided to Congress
-`external_author_id` | An author account ID from Twitter (Includes numerous rounding errrors)
-`tweet_id`| Unique id assigned by twitter to each status update, derived from `article_url`
-`article_url`| Link to original tweet. Now redirects to "Account Suspended" page.
-`tco1_step1` | First landing spot of first http(s)://t.co/ redirect in tweet, if it exists.
-`tco2_step1` | First landing spot of second http(s)://t.co/ redirect in tweet, if it exists.
-`tco3_step1` | First landing spot of third http(s)://t.co/ redirect in tweet, if it exists.
+`alt_external_author_id` | (Version 2) Reconstruction of author account ID from Twitter, derived from `article_url` varibale and the first list provided to Congress
+`tweet_id`| (Version 2) Unique id assigned by twitter to each status update, derived from `article_url`
+`article_url`| (Version 2) Link to original tweet. Now redirects to "Account Suspended" page.
+`tco1_step1` | (Version 2) First landing spot of first http(s)://t.co/ redirect in tweet, if it exists.
+`tco2_step1` | (Version 2) First landing spot of second http(s)://t.co/ redirect in tweet, if it exists.
+`tco3_step1` | (Version 2) First landing spot of third http(s)://t.co/ redirect in tweet, if it exists.
 
 
 If you use this data and find anything interesting, please let us know. Send your projects to oliver.roeder@fivethirtyeight.com or [@ollie](https://twitter.com/ollie).
