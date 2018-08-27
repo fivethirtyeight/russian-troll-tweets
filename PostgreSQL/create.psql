@@ -1,0 +1,53 @@
+DROP SCHEMA rustweets CASCADE;
+CREATE SCHEMA rustweets;
+
+CREATE TYPE rustweets.post_type AS ENUM ( 'QUOTE_TWEET', 'RETWEET');
+
+CREATE TYPE rustweets.account_cat AS ENUM (
+	'Commercial', 'Fearmonger', 'HashtagGamer', 'LeftTroll', 'NewsFeed',
+	'NonEnglish', 'RightTroll', 'Unknown'
+);
+
+CREATE TYPE rustweets.language AS ENUM (
+	'Albanian', 'Arabic', 'Bengali', 'Bulgarian', 'Catalan',
+	'Croatian', 'Czech', 'Danish', 'Dutch', 'English',
+	'Estonian', 'Farsi (Persian)', 'Finnish', 'French', 'German',
+	'Greek', 'Gujarati', 'Hebrew', 'Hindi', 'Hungarian',
+	'Icelandic', 'Indonesian', 'Italian', 'Japanese', 'Kannada',
+	'Korean', 'Kurdish', 'LANGUAGE UNDEFINED', 'Latvian', 'Lithuanian',
+	'Macedonian', 'Malay', 'Malayalam', 'Norwegian', 'Polish',
+	'Portuguese', 'Pushto', 'Romanian', 'Russian', 'Serbian',
+	'Simplified Chinese', 'Slovak', 'Slovenian', 'Somali', 'Spanish',
+	'Swedish', 'Tagalog (Filipino)', 'Tamil', 'Telugu', 'Thai',
+	'Traditional Chinese', 'Turkish', 'Ukrainian', 'Urdu', 'Uzbek',
+	'Vietnamese'
+);
+
+CREATE TYPE rustweets.region AS ENUM (
+	'Afghanistan', 'Austria', 'Azerbaijan', 'Belarus', 'Canada',
+	'Czech Republic', 'Denmark', 'Egypt', 'Estonia', 'Finland',
+	'France', 'Germany', 'Greece', 'Hong Kong', 'India',
+	'Iran, Islamic Republic of', 'Iraq', 'Israel', 'Italy', 'Japan',
+	'Latvia', 'Malaysia', 'Mexico', 'Russian Federation', 'Samoa',
+	'Saudi Arabia', 'Serbia', 'Spain', 'Sweden', 'Switzerland',
+	'Turkey', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States',
+	'Unknown'
+);
+
+CREATE TABLE rustweets.tweets (
+	external_author_id text,
+	author             text,
+	content            text,
+	region             rustweets.region,
+	language           rustweets.language,
+	publish_date       timestamp with time zone,
+	harvested_date     timestamp with time zone,
+	following          int,
+	followers          int,
+	updates            int,
+	post_type          rustweets.post_type, 
+	account_type       text,
+	new_june_2018      bool,
+	retweet            bool,
+	account_category   rustweets.account_cat
+);

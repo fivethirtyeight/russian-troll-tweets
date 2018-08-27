@@ -1,0 +1,17 @@
+-- Updates against b4ta file
+-- https://github.com/fivethirtyeight/russian-troll-tweets/issues/4#issuecomment-412160915
+
+CREATE TABLE rustweets.beta_patch (
+	author                    text,
+	external_author_id        text,
+	user_id_from_hpsci_nov17  bigint PRIMARY KEY
+);
+
+\COPY rustweets.beta_patch FROM 'external_user_id_rounding_fixes_from_hpsci_nov17.csv' WITH ( FORMAT 'csv', HEADER true );
+
+UPDATE rustweets.tweets AS t
+	SET external_author_id = user_id_from_hpsci_nov17
+	FROM rustweets.beta_patch AS p
+	WHERE t.external_author_id = p.external_author_id
+		AND t.author = p.author;
+

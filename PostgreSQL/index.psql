@@ -1,0 +1,3 @@
+CREATE INDEX ON rustweets.tweets (author);
+CREATE INDEX ON rustweets.tweets (publish_date);
+CLUSTER rustweets.tweets USING tweets_publish_date_idx;

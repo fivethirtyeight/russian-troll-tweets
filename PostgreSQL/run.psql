@@ -1,0 +1,4 @@
+\i create.psql
+\i load.psql
+\i patch.psql
+\i index.psql

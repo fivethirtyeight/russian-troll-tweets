@@ -1,0 +1,10 @@
+SET TIME ZONE 'UTC';
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_1.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_2.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_3.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_4.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_5.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_6.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_7.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_8.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../IRAhandle_tweets_9.csv' WITH ( FORMAT 'csv', HEADER true );
