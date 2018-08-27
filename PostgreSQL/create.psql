@@ -53,7 +53,7 @@ CREATE TABLE rustweets.tweets (
 	account_category   rustweets.account_cat,
 	new_june_2018      bool,
 	alt_external_id    bigint,
-  tweet_id           bigint,
+  tweet_id           bigint   PRIMARY KEY,
   article_url        text,
   tco1_step1         text,
   tco2_step1         text,

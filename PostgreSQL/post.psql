@@ -10,8 +10,8 @@
 
 CREATE INDEX ON rustweets.tweets (author);
 CREATE INDEX ON rustweets.tweets (publish_date);
-CREATE INDEX ON rustweets.tweets ( tweet_id );
 
 CREATE STATISTICS rustweets (dependencies) ON tweet_id, publish_date FROM rustweets.tweets;
 
-CLUSTER rustweets.tweets USING tweets_tweet_id_idx;
+CLUSTER rustweets.tweets USING tweets_pkey;
+VACUUM ANALYZE rustweets.tweets;
