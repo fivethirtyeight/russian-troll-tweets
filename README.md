@@ -1,4 +1,5 @@
-# 3 million Russian troll tweets
+3 million Russian troll tweets (Version 2.0)
+====
 
 This data was used in the FiveThirtyEight story [Why We’re Sharing 3 Million Russian Troll Tweets](https://fivethirtyeight.com/features/why-were-sharing-3-million-russian-troll-tweets/).
 
@@ -8,15 +9,29 @@ FiveThirtyEight obtained the data from Clemson University researchers [Darren Li
 
 The basis for the Twitter handles included in this data are the [November 2017](https://democrats-intelligence.house.gov/uploadedfiles/exhibit_b.pdf) and [June 2018](https://democrats-intelligence.house.gov/uploadedfiles/ira_handles_june_2018.pdf) lists of Internet Research Agency-connected handles that Twitter [provided](https://democrats-intelligence.house.gov/news/documentsingle.aspx?DocumentID=396) to Congress. This data set contains every tweet sent from each of the 2,752 handles on the November 2017 list since May 10, 2015. For the 946 handles newly added on the June 2018 list, this data contains every tweet since June 19, 2015. (For certain handles, the data extends even earlier than these ranges. Some of the listed handles did not tweet during these ranges.) The researchers believe that this includes the overwhelming majority of these handles’ activity. The researchers also removed 19 handles that remained on the June 2018 list but that they deemed very unlikely to be IRA trolls.
 
-In total, the nine CSV files include 2,973,371 tweets from 2,848 Twitter handles. Also, as always, caveat emptor -- in this case, tweet-reader beware: In addition to their own content, some of the tweets contain active links, which may lead to adult content or worse.
+In total, the nine CSV files include 2,972,920 tweets from 2,843 Twitter handles. Also, as always, caveat emptor -- in this case, tweet-reader beware: In addition to their own content, some of the tweets contain active links, which may lead to adult content or worse.
 
 The Clemson researchers used this data in a working paper, [Troll Factories: The Internet Research Agency and State-Sponsored Agenda Building](http://pwarren.people.clemson.edu/Linvill_Warren_TrollFactory.pdf), which is currently under review at an academic journal. The authors’ analysis in this paper was done on the data file provided here, limiting the date window to June 19, 2015, to Dec. 31, 2017.
+
+Downloading
+====
+
+You can download this from github using the **Download Zip** feature of Github
+(under **Clone or Download**) Or, you can use the `--depth=1` option to `git
+clone`
+
+```
+git clone --depth=1 https://github.com/houstondatavis/russian-troll-tweets
+```
+
+Schema
+====
 
 The files have the following columns:
 
 Header | Definition
 ---|---------
-`external_author_id` | An author account ID from Twitter 
+`external_author_id` | An author account ID from Twitter (Includes numerous rounding errrors)
 `author` | The handle sending the tweet
 `content` | The text of the tweet
 `region` | A region classification, as [determined by Social Studio](https://help.salesforce.com/articleView?id=000199367&type=1)
@@ -31,12 +46,23 @@ Header | Definition
 `retweet` | A binary indicator of whether or not the tweet is a retweet
 `account_category` | General account theme, as coded by Linvill and Warren
 `new_june_2018` | A binary indicator of whether the handle was newly listed in June 2018
+`alt_external_author_id` | (Version 2) Reconstruction of author account ID from Twitter, derived from `article_url` varibale and the first list provided to Congress
+`tweet_id`| (Version 2) Unique id assigned by twitter to each status update, derived from `article_url`.
+`article_url`| (Version 2) Link to original tweet. Now redirects to "Account Suspended" page.
+`tco1_step1` | (Version 2) First landing spot of first http(s)://t.co/ redirect in tweet, if it exists.
+`tco2_step1` | (Version 2) First landing spot of second http(s)://t.co/ redirect in tweet, if it exists.
+`tco3_step1` | (Version 2) First landing spot of third http(s)://t.co/ redirect in tweet, if it exists.
+
 
 If you use this data and find anything interesting, please let us know. Send your projects to oliver.roeder@fivethirtyeight.com or [@ollie](https://twitter.com/ollie).
 
 The Clemson researchers wish to acknowledge the assistance of the Clemson University Social Media Listening Center and Brandon Boatwright of the University of Tennessee, Knoxville.
 
-#### Updates
+Updates
+====
 
 - Split data into several small files. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/2)]
 - Fix double encoding. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/5)]
+- Additional variables outlined above
+- Removed several accounts accidentally included 
+- Added PostgreSQL schema, loader, and dumper (self-hosting with Pg). Removed duplicates.

@@ -1,0 +1,3 @@
+\i create.psql
+\i load.psql
+\i post.psql

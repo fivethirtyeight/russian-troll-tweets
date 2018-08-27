@@ -1,0 +1,17 @@
+-- Old version from https://github.com/patrick-lee-warren/russian-troll-tweets/tree/Version_2
+-- not required with self-hosting
+-- ALTER TABLE rustweets.tweets
+-- 	ALTER COLUMN external_author_id
+-- 		SET DATA TYPE bigint
+-- 		USING trim('''' FROM external_author_id)::bigint,
+-- 	ALTER COLUMN alt_external_id
+-- 		SET DATA TYPE bigint
+-- 		USING trim('''' FROM alt_external_id)::bigint;
+
+CREATE INDEX ON rustweets.tweets (author);
+CREATE INDEX ON rustweets.tweets (publish_date);
+
+CREATE STATISTICS rustweets (dependencies) ON tweet_id, publish_date FROM rustweets.tweets;
+
+CLUSTER rustweets.tweets USING tweets_pkey;
+VACUUM ANALYZE rustweets.tweets;
