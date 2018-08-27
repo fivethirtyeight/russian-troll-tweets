@@ -1,4 +1,5 @@
-# 3 million Russian troll tweets (Version 2.0)
+3 million Russian troll tweets (Version 2.0)
+====
 
 This data was used in the FiveThirtyEight story [Why We’re Sharing 3 Million Russian Troll Tweets](https://fivethirtyeight.com/features/why-were-sharing-3-million-russian-troll-tweets/).
 
@@ -11,6 +12,20 @@ The basis for the Twitter handles included in this data are the [November 2017](
 In total, the nine CSV files include 2,972,920 tweets from 2,843 Twitter handles. Also, as always, caveat emptor -- in this case, tweet-reader beware: In addition to their own content, some of the tweets contain active links, which may lead to adult content or worse.
 
 The Clemson researchers used this data in a working paper, [Troll Factories: The Internet Research Agency and State-Sponsored Agenda Building](http://pwarren.people.clemson.edu/Linvill_Warren_TrollFactory.pdf), which is currently under review at an academic journal. The authors’ analysis in this paper was done on the data file provided here, limiting the date window to June 19, 2015, to Dec. 31, 2017.
+
+Downloading
+====
+
+You can download this from github using the **Download Zip** feature of Github
+(under **Clone or Download**) Or, you can use the `--depth=1` option to `git
+clone`
+
+```
+git clone --depth=1 https://github.com/houstondatavis/russian-troll-tweets
+```
+
+Schema
+====
 
 The files have the following columns:
 
@@ -32,7 +47,7 @@ Header | Definition
 `account_category` | General account theme, as coded by Linvill and Warren
 `new_june_2018` | A binary indicator of whether the handle was newly listed in June 2018
 `alt_external_author_id` | (Version 2) Reconstruction of author account ID from Twitter, derived from `article_url` varibale and the first list provided to Congress
-`tweet_id`| (Version 2) Unique id assigned by twitter to each status update, derived from `article_url`
+`tweet_id`| (Version 2) Unique id assigned by twitter to each status update, derived from `article_url`.
 `article_url`| (Version 2) Link to original tweet. Now redirects to "Account Suspended" page.
 `tco1_step1` | (Version 2) First landing spot of first http(s)://t.co/ redirect in tweet, if it exists.
 `tco2_step1` | (Version 2) First landing spot of second http(s)://t.co/ redirect in tweet, if it exists.
@@ -43,9 +58,11 @@ If you use this data and find anything interesting, please let us know. Send you
 
 The Clemson researchers wish to acknowledge the assistance of the Clemson University Social Media Listening Center and Brandon Boatwright of the University of Tennessee, Knoxville.
 
-#### Updates
+Updates
+====
 
 - Split data into several small files. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/2)]
 - Fix double encoding. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/5)]
 - Additional variables outlined above
 - Removed several accounts accidentally included 
+- Added PostgreSQL schema, loader, and dumper (self-hosting with Pg). Removed duplicates.
