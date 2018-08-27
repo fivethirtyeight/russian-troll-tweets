@@ -31,6 +31,12 @@ Header | Definition
 `retweet` | A binary indicator of whether or not the tweet is a retweet
 `account_category` | General account theme, as coded by Linvill and Warren
 `new_june_2018` | A binary indicator of whether the handle was newly listed in June 2018
+`alt_external_id` | Reconstruction of author account ID from Twitter, derived from `article_url` variable and the first list provided to Congress
+`tweet_id` | Unique id assigned by twitter to each status update, derived from `article_url`
+`article_url` | Link to original tweet. Now redirects to "Account Suspended" page
+`tco1_step1` | First redirect for the first http(s)://t.co/ link in a tweet, if it exists
+`tco2_step1` | First redirect for the second http(s)://t.co/ link in a tweet, if it exists
+`tco3_step1` | First redirect for the third http(s)://t.co/ link in a tweet, if it exists
 
 If you use this data and find anything interesting, please let us know. Send your projects to oliver.roeder@fivethirtyeight.com or [@ollie](https://twitter.com/ollie).
 
@@ -40,3 +46,4 @@ The Clemson researchers wish to acknowledge the assistance of the Clemson Univer
 
 - Split data into several small files. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/2)]
 - Fix double encoding. [[issue](https://github.com/fivethirtyeight/russian-troll-tweets/issues/5)]
+- Data update from researchers at Clemson U. [[PR](https://github.com/fivethirtyeight/russian-troll-tweets/pull/28)]
