@@ -1,10 +1,33 @@
 SET TIME ZONE 'UTC';
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_1.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_2.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_3.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_4.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_5.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_6.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_7.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_8.csv' WITH ( FORMAT 'csv', HEADER true );
-\COPY rustweets.tweets FROM '../IRAhandle_tweets_9.csv' WITH ( FORMAT 'csv', HEADER true );
+
+-- Old format from https://github.com/patrick-lee-warren/russian-troll-tweets/tree/Version_2
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_1.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_2.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_3.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_4.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_5.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_6.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_7.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_8.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_9.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_10.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_11.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_12.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_13.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_14.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_15.csv' WITH ( FORMAT 'csv', HEADER true );
+-- \COPY rustweets.tweets FROM '../IRAhandle_tweets_16.csv' WITH ( FORMAT 'csv', HEADER true );
+
+-- self hosting
+\COPY rustweets.tweets FROM '../rustweets_00.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_01.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_02.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_03.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_04.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_05.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_06.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_07.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_08.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_09.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_10.csv' WITH ( FORMAT 'csv', HEADER true );
+\COPY rustweets.tweets FROM '../rustweets_11.csv' WITH ( FORMAT 'csv', HEADER true );
